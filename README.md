@@ -2,7 +2,10 @@
 
 ## Table of Contents
 
-* 
+* first make navbar li dynamic
+* and then make scroll when clik on any links go to section 
+* and make scroll window first get top and bottom by method getBoundingClientRect
+* and make scrollWindow to make class active and remove
 
 ## Instructions
 

@@ -48,9 +48,11 @@
 
 // Set sections as active
 
-
+// sections Variable
 let sectionsComponents = document.querySelectorAll("section");
+// Ul Variable
 let Lists = document.getElementById("ulList");
+// btn Variable
 const upButton = document.getElementById('upButton')
 
 
@@ -62,7 +64,6 @@ function AddedUL() {
         let list = document.createElement("li");
         // set Class into list
         list.classList.add("nav-item")
-            /////////////////////////////////////////
             // Create link 
         let links = document.createElement("a");
         // set class and href into link 
@@ -76,7 +77,7 @@ function AddedUL() {
 
     })
 }
-
+// this func to get top and bottom and will call this func in scrollWindow Func
 function BoundSec() {
     let targetSection = sectionsComponents[0];
     sectionsComponents.forEach(sectionRect => {
@@ -94,15 +95,15 @@ function BoundSec() {
 function scrollWindow() {
     window.addEventListener('scroll', (e) => {
         upButton.style.display = "block"
-        let scrollSec = BoundSec();
+        let scrollSec = BoundSec(); // this func getBoundingClientRect
         scrollSec.classList.add('your-active-class');
-
+        // Remove Class Active
         sectionsComponents.forEach(activeSec => {
-            if (activeSec.id != scrollSec.id & activeSec.classList.contains('your-active-class')) {
-                activeSec.classList.remove('your-active-class');
-            }
-        })
-
+                if (activeSec.id != scrollSec.id & activeSec.classList.contains('your-active-class')) {
+                    activeSec.classList.remove('your-active-class');
+                }
+            })
+            //Add Class active
         const activeLink = document.querySelector(`a[data-link="${scrollSec.id}"]`)
         activeLink.classList.add('active')
 
@@ -115,7 +116,7 @@ function scrollWindow() {
 
     })
 }
-
+// this funk Scroll from links ( onClick )
 function ScrollLinks() {
     Lists.addEventListener("click", (e) => {
         console.log(e.target.dataset.link)
